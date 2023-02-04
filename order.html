@@ -37,6 +37,12 @@
       border-radius: 3px;
       padding: 10px;
     }
+
+    @media only screen and (min-width: 768px) {
+      article {
+        width: 350px;
+      }
+    }
   </style>
   <body>
     <header>
@@ -140,6 +146,12 @@
         title.innerText = pieOrder.title;
         price.innerText = pieOrder.price;
         desc.innerText = pieOrder.desc;
+
+        const img = pie.querySelector("img");
+        // the id comes from the pies order, example const order = {
+        //   id: button.getAttribute("data-order"),
+        img.setAttribute("src", `images/${pieOrder.id}.png`);
+        img.setAttribute("alt", pieOrder.title);
       }
     });
   </script>
